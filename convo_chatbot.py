@@ -1,22 +1,3 @@
-# Will help look up the HR policies and ask questions
-# To develop, the following elements will be used
-# A vector DataBase storing the HR Policy Embeddings(FAISS)
-# Streamlit for developing the chat UI
-# A conversational Retrieval chain implementing Conversational Memory
-
-#To use the website information for our chatbot
-# To download use wget.exe
-# -> Download the HTMLs from the website
-# -> Create embeddings and store in vector DB
-# -> Develop the conversational Chain
-# -> Build Streamlit UI
-
-#The downloaaded folder has many subfolder structure
-#Our program will recursively read these files
-#load these individual chunks as a vector into a local vector db - FAISS
-#we trigget a query on this db using semantic similarity search which
-#extracts relevant chunks (Documents) retrieved by the semantic search
-
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -30,9 +11,6 @@ def upload_htmls():
     -> Loaded documents are split into chunks using Splitter
     -> These chunks are converted into Language Embeddings and loaded as vector into a local FAISS vector db
     """
-    
-    #Load aall the HTML pages in the given folder structure recusively using Directory loader
-
     loader = DirectoryLoader(path = "C:/Personal_1/Praful/RAG_Udemy/langchain-docs")
     documents = loader.load()
     print(f"{len(documents)} Pages Loaded")
@@ -47,11 +25,9 @@ def upload_htmls():
     print(f"Split into {len(split_doc)} Documents...")
 
     print(split_doc[0].metadata)
-
     #upload chunks as vector embeddings into FAISS
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     db = FAISS.from_documents(split_doc, embeddings)
-    #Save the FAISS DB locally
     db.save_local("faiss_index")
 
 def faiss_query():
