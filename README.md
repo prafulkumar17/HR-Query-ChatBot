@@ -1,8 +1,27 @@
-# HR-Query-ChatBot  
-A streamlit application made using RAG architecture.  
-The application is designed for newly joined employees. They can chat with this bot regarding any HR related  
-query they have, they need not have to ask their colleagues about the same.  
-  
-Working:  
--> Simply ask the bot your question, it will give an answer based on the database(vector).  
--> Prompt need not be very specific, as the bot answers based on previos questions and answers provided(conversational memory)  
+# 🏢 HR Query Bot – AI-Powered Employee Assistance  
+
+## 🚀 Overview  
+A **Streamlit application** built using **RAG (Retrieval-Augmented Generation) architecture**, designed to assist **newly joined employees** with HR-related queries. Instead of asking colleagues, employees can chat with this AI-powered bot for instant answers.  
+
+## ✨ Features  
+- 🔹 **Instant HR Assistance:** Provides quick and accurate answers to HR-related questions.  
+- 🔹 **Conversational Memory:** Understands queries based on previous interactions, making follow-ups seamless.  
+- 🔹 **Flexible Query Input:** No need for highly specific prompts; the bot intelligently interprets user intent.  
+- 🔹 **Vector Database Retrieval:** Answers are generated using an optimized knowledge base.  
+- 🔹 **User-Friendly Interface:** Simple and intuitive **Streamlit-based UI** for effortless interactions.  
+
+## ⚙️ How It Works  
+1. **Ask Your Question** – Type any HR-related query in the chat interface.  
+2. **AI Processes the Query** – The bot searches the **vector database** for the most relevant answer.  
+3. **Receive an Answer** – Get an instant response based on past questions and HR documentation.  
+
+## 📚 Use Cases  
+- ✅ **New Employee Onboarding:** Helps fresh hires quickly find HR-related information.  
+- ✅ **HR Self-Service:** Reduces dependency on colleagues for basic HR queries.  
+- ✅ **24/7 Assistance:** Employees can ask questions anytime without waiting for HR representatives.  
+
+## 🛠️ Installation & Usage  
+1. **Clone the Repository**  
+   ```sh
+   git clone https://github.com/yourusername/HR-Query-Bot.git  
+   cd HR-Query-Bot
